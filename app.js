@@ -4,6 +4,7 @@ const { mongoConnect } = require('./utils/database');
 const User = require('./models/user'); // Make sure this path is correct
 const getDb = require('./utils/database').getDb;
 const session = require('express-session');
+const MongoStore = require('connect-mongo'); // Add this line
 
 const app = express();
 
@@ -16,11 +17,14 @@ app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 app.use(session({
-    secret: 'your-secret-key', // use a strong secret in production
-    resave: false,
-    saveUninitialized: false
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGO_URI, // نفس رابط المونجو
+    ttl: 14 * 24 * 60 * 60 // مدة الجلسة (14 يوم)
+  })
 }));
-
 // Logging middleware
 app.use((req, res, next) => {
     const user = req.session && req.session.username ? req.session.username : 'Guest';
