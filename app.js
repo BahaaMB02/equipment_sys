@@ -23,7 +23,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
-    mongoUrl: process.env.MONGO_URI, // نفس رابط المونجو
+    mongoUrl: process.env.mongoUrl, // must be 'mongoUrl'
     ttl: 14 * 24 * 60 * 60 // مدة الجلسة (14 يوم)
   })
 }));
