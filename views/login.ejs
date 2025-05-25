@@ -1,0 +1,36 @@
+<%-include('partials/header') %>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+   <%-include('partials/navigate') %>
+    <div class="login-container">
+        <h1>تسجيل الدخول</h1>
+        <% if (typeof error !== 'undefined' && error) { %>
+            <div style="color: red; margin-bottom: 10px;"><%= error %></div>
+        <% } %>
+        <form action="/login" method="POST" class="login-form">
+            <label for="email">البريد الإلكتروني أو اسم المستخدم</label>
+            <input type="text" id="email" name="email" required class="input-field" placeholder="البريد الإلكتروني أو اسم المستخدم">
+            <br>
+            <label for="password">كلمه السر</label>
+            <div style="position:relative;">
+                <input type="password" id="password" name="password" required class="input-field" placeholder="كلمه السر">
+                <button type="button" onclick="togglePassword('password', this)" class="show-password-btn" tabindex="-1" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:#ffd700;font-size:20px;cursor:pointer;padding:0 6px;z-index:2;">👁</button>
+            </div>
+            <br>
+            <button type="submit" class="btn">تسجيل دخول</button>
+        </form>
+    </div>
+    <script>
+      function togglePassword(inputId, btn) {
+        var input = document.getElementById(inputId);
+        if (input.type === "password") {
+          input.type = "text";
+          btn.textContent = "🔓";
+        } else {
+          input.type = "password";
+          btn.textContent = "👁";
+        }
+      }
+    </script>
+<%-include('partials/end') %>

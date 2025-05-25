@@ -1,0 +1,63 @@
+<%-include('partials/header')%>
+</head>
+<body>
+
+ <%-include('partials/navigate')%>
+    <div class="home-container">
+        <h2>منظومة المعدات - الكتيبة ۷۱ طرق </h2>
+        <% if (typeof username !== 'undefined' && username) { %>
+            <div style="margin: 15px 0; color: #ffd700; font-weight: bold;">
+                المستخدم الحالي: <%= username %>
+            </div>
+        <% } %>
+    </div>
+    <div class="home-buttons">
+       <button class="main-action-btn" onclick="window.location.href='/home/bldozer'">آله جرف</button>
+        <button class="main-action-btn" onclick="window.location.href='/home/gredar'">آله تسوية</button>
+        <button class="main-action-btn" onclick="window.location.href='/home/fenshr'">آله فرش أسفلت</button>
+        <button class="main-action-btn" onclick="window.location.href='/home/makshta'">آله كشط أسفلت</button>
+       <button class="main-action-btn" onclick="window.location.href='/home/bobcat'">بوبكات</button>
+       
+       
+       
+    </div>
+
+    <div class="home-buttons">
+        
+        <button class="main-action-btn2" onclick="window.location.href='/home/garar40m'">جرار ٤٠م </button>
+        <button class="main-action-btn2" onclick="window.location.href='/home/gararmaknsa'">جرار مكنسة</button>
+        <button class="main-action-btn2" onclick="window.location.href='/home/hafar'">حفار</button>
+        <button class="main-action-btn2" onclick="window.location.href='/home/lodar'">رافع أتربه</button>
+        
+        
+    </div>
+    
+    <div class="home-buttons">
+       <button class="main-action-btn" onclick="window.location.href='/home/daghet'">ضاغط هواء </button>
+        <button class="main-action-btn" onclick="window.location.href='/home/bawzer'">عربه تفويل وقود</button>
+        <button class="main-action-btn" onclick="window.location.href='/home/botamen'">عربه رش بيتومين</button>
+        <button class="main-action-btn" onclick="window.location.href='/home/alab'">قلاب</button>
+       <button class="main-action-btn" onclick="window.location.href='/home/fontas'">فنطاس مياه</button>
+       
+       
+      
+      
+    </div>
+
+    <div class="home-buttons">
+
+        <button class="main-action-btn2" onclick="window.location.href='/home/moaled'">ماكينة كهرباء</button>
+        <button class="main-action-btn2" onclick="window.location.href='/home/kasor'">كاسور</button>
+         <button class="main-action-btn2" onclick="window.location.href='/home/maknsa'">مكنسة ممرات</button>
+        <button class="main-action-btn2" onclick="window.location.href='/home/wensh'">ونش</button>
+        
+    </div>
+
+    <div class="home-buttons">
+       <button class="main-action-btn" onclick="window.location.href='/home/asphlt'">هراس أسفلت</button>
+       <button class="main-action-btn" onclick="window.location.href='/home/torab'">هراس تراب</button>
+       
+    </div>
+
+    
+<%-include('partials/end')%>

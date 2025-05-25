@@ -1,0 +1,25 @@
+<div class="header">
+        <img src="/images/logo.png" alt="شعار الكتيبه"
+        width="100px" />
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="القائمة" style="display:none;">
+            ☰
+        </button>
+        <div class="header-links" id="headerLinks">
+            <a href="/home">الصفحه الرئيسيه</a>
+            <a href="/tamam">تمام المعدات</a>
+            <a href="/repair">الصيانات</a>
+            <a href="/stores">المخازن</a>
+            <a href="/signup" class="btn btn-circle">إنشاء حساب جديد</a>
+            <a href="/logout" class="btn btn-circle" style="background: #f1031bd9; color: #fff; margin-right: 10px;">تسجيل الخروج</a>
+        </div>
+    </div>
+    <script>
+function toggleMenu() {
+    var links = document.getElementById('headerLinks');
+    if (links.classList.contains('show-menu')) {
+        links.classList.remove('show-menu');
+    } else {
+        links.classList.add('show-menu');
+    }
+}
+</script>

@@ -1,0 +1,457 @@
+const { getDb } = require('../utils/database');
+
+exports.getHome = (req, res) => {
+    res.render('home', {
+        username: req.session.username,
+        pageTitle: 'الصفحه الرئيسيه'
+    });
+};
+
+///////////////////////////////////////////
+exports.getLodar = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const lodar = await db.collection('lodar').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('lodar', { pageTitle: 'صفحه تفاصيل رافع أتربة', lodar, columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getBldozer = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const bldozer = await db.collection('bldozer').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('bldozer', { pageTitle: 'صفحه تفاصيل آله جرف', bldozer, columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getBobcat = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const bobcat= await db.collection('bobcat').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('bobcat', { pageTitle: 'صفحه تفاصيل بوبكات', bobcat, columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getGararmaknsa = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const gararmaknsa= await db.collection('gararmaknsa').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('gararmaknsa', { pageTitle: 'صفحه تفاصيل جرار مكنسة', gararmaknsa, columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getGredar = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const gredar= await db.collection('gredar').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            image4:"مؤجر",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('gredar', { pageTitle: 'صفحه تفاصيل آله تسوية', gredar, columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+
+///////////////////////////////////////////
+exports.getHafar = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const hafar= await db.collection('hafar').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('hafar', { pageTitle: 'صفحه تفاصيل حفار', hafar, columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+
+///////////////////////////////////////////
+exports.getGarar40m = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const garar40m= await db.collection('garar40m').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('garar40m', { pageTitle: 'صفحه تفاصيل جرار ٤٠م ', garar40m, columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getDaghet = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const daghet= await db.collection('daghet').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('daghet', { pageTitle: 'صفحه تفاصيل ضاغط هواء ', daghet, columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getFenshr = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const fenshr= await db.collection('fenshr').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('fenshr', { pageTitle: 'صفحه تفاصيل آله فرش أسفلت', fenshr, columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getFontas = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const fontas= await db.collection('fontas').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('fontas', { pageTitle: 'صفحه تفاصيل آله فنطاس مياه', fontas, columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getAlab = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const alab= await db.collection('alab').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            rep4:" افيكو",
+            rep5:" مرسيدس",
+            rep6:" MP4",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('alab', { pageTitle: 'صفحه تفاصيل آله قلاب', alab , columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getKasor = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const kasor= await db.collection('kasor').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('kasor', { pageTitle: 'صفحه تفاصيل كاسور', kasor , columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getMaknsa = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const maknsa= await db.collection('maknsa').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('maknsa', { pageTitle: 'صفحه تفاصيل مكنسه ممرات', maknsa , columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getMakshta = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const makshta= await db.collection('makshta').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('makshta', { pageTitle: 'صفحه تفاصيل آله كشط أسفلت', makshta , columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getBawzer = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const bawzer= await db.collection('bawzer').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('bawzer', { pageTitle: 'صفحه تفاصيل عربه تفويل وقود', bawzer , columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getBotamen = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const botamen= await db.collection('botamen').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('botamen', { pageTitle: 'صفحه تفاصيل عربه رش بيتومين', botamen , columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getMoaled = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const moaled= await db.collection('moaled').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image4:"مولدات الكساره",
+            rep4:"مولدات الكيان",
+            rep5:"مولدات الموقع + سوق السيارات",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('moaled', { pageTitle: 'صفحه تفاصيل ماكينة كهرباء', moaled , columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getAsphlt = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const asphlt= await db.collection('asphlt').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('asphlt', { pageTitle: 'صفحه تفاصيل هراس أسفلت', asphlt , columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getTorab = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const torab= await db.collection('torab').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('torab', { pageTitle: 'صفحه تفاصيل هراس تراب', torab , columnNames });
+    } catch (err) {
+        next(err);
+    }
+};
+///////////////////////////////////////////
+exports.getWensh = async (req, res, next) => {
+    try {
+        const db = getDb();
+        const wensh= await db.collection('wensh').find().toArray();
+
+        // أسماء الأعمدة المخصصة
+        const columnNames = { 
+            image1:"صوره العقد",
+            rep1:"بيان الاعطال",
+            rep2:"تقارير الصيانه",
+            image2:"صوره الشاسيه",
+            rep3:"مستند الصرف",
+            image3:"صور بطاقه السائق",
+            _id: 'رقم التعريف'
+        };
+
+        res.render('wensh', { pageTitle: 'صفحه تفاصيل ونش', wensh , columnNames });
+    } catch (err) {
+        next(err);
+    }
+};

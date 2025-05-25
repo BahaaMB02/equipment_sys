@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+</head>
+<body>
+  <%- include('partials/navigate') %>
+
+  <div class="home-container">
+    <h1>الصيانات</h1>
+  </div>
+
+  <div class="home-buttons">
+    <% if (!repair || !repair.length) { %>
+      <div class="no-data">لا توجد بيانات للعرض.</div>
+    <% } else { %>
+      <% repair.forEach(function(report) { %>
+        <div class="report-card">
+          <% Object.entries(report).forEach(function([key, value]) { %>
+            <% if (key !== '_id' && key !== 'name') { %>
+              <% if (typeof value === 'string' && value.startsWith('http')) { %>
+                <div class="report-item">
+                  <a href="<%= value %>" target="_blank" class="link-style"><%= columnNames[key] || key %></a>
+                </div>
+              <% } else { %>
+                <div class="report-item">
+                  <strong><%= columnNames[key] || key %>:</strong>
+                  <span><%= value %></span>
+                </div>
+              <% } %>
+            <% } %>
+          <% }); %>
+
+          <form action="/repair/delete" method="POST">
+            <input type="hidden" name="id" value="<%= report._id %>">
+            <button type="submit" class="btn btn-danger">🗑 حذف</button>
+          </form>
+          
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+
+<%- include('partials/end') %>

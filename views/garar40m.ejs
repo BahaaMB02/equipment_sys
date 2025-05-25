@@ -1,0 +1,53 @@
+<%- include('partials/header') %>
+</head>
+<body>
+  <%- include('partials/navigate') %>
+
+  <div class="home-container">
+    <h1>جرار ٤٠م </h1>
+  </div>
+
+  <div class="accordion-container">
+    <% if (!garar40m || !garar40m.length) { %>
+      <div class="no-data">لا توجد بيانات للعرض.</div>
+    <% } else { %>
+      <% garar40m.forEach(function(report, index) { %>
+        <div class="accordion-item">
+          <button class="accordion-button" onclick="toggleAccordion('<%= index %>')">
+            <%= report.name || 'بدون اسم' %>
+          </button>
+          <div class="accordion-content" id="accordion-<%= index %>">
+            <% Object.entries(report).forEach(function([key, value]) { %>
+              <% if (key !== '_id' && key !== 'name') { %>
+                <div class="report-item">
+                <% if (typeof value === 'string' && value.startsWith('http')) { %>
+                    <a href="<%= value %>" target="_blank" class="link-style">
+                        <strong><%= columnNames[key] || key %></strong>
+                    </a>
+                <% } else { %>
+                    <strong><%= columnNames[key] || key %>: </strong>
+                    <%= value %>
+              <% } %>
+
+                </div>
+              <% } %>
+            <% }); %>
+            <form action="/stores/delete" method="POST">
+              <input type="hidden" name="id" value="<%= report._id %>">
+              <button type="submit" class="btn btn-danger">🗑 حذف</button>
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+
+<script>
+  function toggleAccordion(id) {
+    const content = document.getElementById('accordion-' + id);
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+
+<%- include('partials/end') %>
+
