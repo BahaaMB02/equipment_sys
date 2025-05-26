@@ -1,5 +1,7 @@
 body {
   font-family: 'Amiri','Cairo', 'Tahoma', Arial, sans-serif;
+  background: linear-gradient(135deg, #1F2A44 0%, #2B2B2B 100%); /* Navy Blue to Charcoal Black */
+  color: #2B2B2B; /* Charcoal Black text */
 }
 
 .accordion-container {
@@ -8,12 +10,12 @@ body {
 }
 
 .accordion-item {
-   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  border: 1px solid #B0B3B8; /* Steel Gray border */
   border-radius: 8px;
   overflow: hidden;
-  background-color: #1a1a2e;
-  color: white;
+  background-color: #B0B3B8; /* Steel Gray panel */
+  color: #2B2B2B; /* Charcoal Black text */
   width: 30%;         /* Add this */
   margin-left: auto;  /* Add this */
   margin-right: auto; /* Add this */
@@ -22,8 +24,8 @@ body {
 
 
 .accordion-button {
-  background-color: #16213e;
-  color: white;
+  background-color: #2B2B2B; /* Charcoal Black */
+  color: #FFD500; /* Safety Yellow */
   padding: 12px;
   width: 100%;
   text-align: right;
@@ -37,14 +39,15 @@ body {
 .accordion-content {
   display: none;
   padding: 10px 15px;
-  background-color: #0f3460;
+  background-color: #1F2A44; /* Navy Blue */
+  color: #2B2B2B;
 }
 
 .report-card {
-  background: #1a1a2e;
-  border: 1px solid #444;
+  background: #2B2B2B;  /* Steel Gray */
+  border: 1px solid  #2B2B2B; /* Charcoal Black border */
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px #2B2B2B33;
   padding: 22px 28px;
   margin: 18px auto; /* Center horizontally */
   width: 340px;
@@ -53,17 +56,18 @@ body {
   flex-direction: column;
   align-items: center; /* Fix typo: cenetr -> center */
   transition: box-shadow 0.2s;
+  color: #2B2B2B;
 }
 
 .report-card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+  box-shadow: 0 4px 16px #ffda06e3;
 }
 
 .report-item {
   margin-bottom: 10px;
   font-size: 18px;
-  color: #ffd700;
-  background: #16213e;
+  color: #2B2B2B; /* Charcoal Black */
+  background: #2B2B2B; /* Light Steel Gray */
   padding: 7px 3px;
   border-radius: 6px;
   width: 100%;
@@ -74,33 +78,33 @@ body {
 }
 
 .report-item strong {
-  color: #fff;
+  color: #FFD500; /* Safety Yellow */
   min-width: 110px;
   display: inline-block;
 }
 
 .link-style {
-    text-decoration: none;  
-   color: #00bfff;        
- 
+  text-decoration: none;  
+  color: #FFD500; /* Safety Yellow */
 }
 
 .link-style:hover {
-  text-decoration: underline; 
+  text-decoration: none
+ /* color: #2B2B2B; /* Charcoal Black */
 }
 
 .btn-danger {
-  background-color: #e74c3c;
+  background-color: #FFD500; /* Safety Yellow */
   border: none;
   padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
-  color: white;
+  color: #2B2B2B; /* Charcoal Black */
 }
 
 .main-action-btn {
-  background-color: #16213e;
-  color: white;
+  background-color: #2B2B2B; /* Charcoal Black */
+  color: #FFD500; /* Safety Yellow */
   padding: 14px 32px;
   border: none;
   margin: 50px;
@@ -110,9 +114,13 @@ body {
   font-family: inherit; /* Match font with rest of app */
   font-weight: bold;
 }
+.main-action-btn:hover {
+  background-color: #FFD500;
+  color: #2B2B2B;
+}
 .main-action-btn2 {
-  background-color: #16213e;
-  color: white;
+  background-color: #2B2B2B; /* Charcoal Black */
+  color: #FFD500; /* Safety Yellow */
   padding: 14px 32px;
   border: none;
   margin: 35px ;
@@ -121,6 +129,10 @@ body {
   transition: background 0.2s, color 0.2s;
   font-family: inherit; /* Match font with rest of app */
   font-weight: bold;
+}
+.main-action-btn2:hover {
+  background-color: #FFD500;
+  color: #2B2B2B;
 }
 
 .home-buttons {
