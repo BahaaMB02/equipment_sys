@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+</head>
+<body>
+  <%- include('partials/navigate') %>
+
+  <div class="home-container">
+    <h1>بيانات السائقين</h1>
+  </div>
+
+  <div class="home-buttons">
+    <% if (!drivers || !drivers.length) { %>
+      <div class="no-data">لا توجد بيانات للعرض.</div>
+    <% } else { %>
+      <% drivers.forEach(function(report) { %>
+        <div class="report-card">
+          <% Object.entries(report).forEach(function([key, value]) { %>
+            <% if (key !== '_id' && key !== 'name') { %>
+              <% if (typeof value === 'string' && value.startsWith('http')) { %>
+                <div class="report-item">
+                  <a href="<%= value %>" target="_blank" class="link-style"><%= columnNames[key] || key %></a>
+                </div>
+              <% } else { %>
+                <div class="report-item">
+                  <strong><%= columnNames[key] || key %>:</strong>
+                  <span><%= value %></span>
+                </div>
+              <% } %>
+            <% } %>
+          <% }); %>
+          
+          
+
+          
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+
+<%- include('partials/end') %>

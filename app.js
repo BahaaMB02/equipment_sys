@@ -67,6 +67,7 @@ const logoutRoutes = require('./routes/logout');
 const storesRoutes = require('./routes/stores');
 const homeRoutes = require('./routes/home');
 const tamamRoutes = require('./routes/tamam');
+const driversRoutes = require('./routes/drivers');
 
 
 app.use(loginData);
@@ -82,7 +83,7 @@ app.use(repairData);
 app.use(storesRoutes);
 app.use(homeRoutes);
 app.use(tamamRoutes);
-
+app.use(driversRoutes);
 // Error handler (add this at the end)
 app.use((err, req, res, next) => {
     console.error(err.stack);
