@@ -6,7 +6,18 @@ exports.getHome = (req, res) => {
         pageTitle: 'الصفحه الرئيسيه'
     });
 };
-
+///////////////////////////////////////////
+exports.getBldozer = (req, res) => {
+    res.render('bldozer', {
+        pageTitle: 'آله جرف',
+    });
+};
+///////////////////////////////////////////
+exports.getGredar = (req, res) => {
+    res.render('bldozer', {
+        pageTitle: 'آله جرف',
+    });
+};
 ///////////////////////////////////////////
 exports.getLodar = async (req, res, next) => {
     try {
@@ -30,27 +41,7 @@ exports.getLodar = async (req, res, next) => {
     }
 };
 ///////////////////////////////////////////
-exports.getBldozer = async (req, res, next) => {
-    try {
-        const db = getDb();
-        const bldozer = await db.collection('bldozer').find().toArray();
 
-        // أسماء الأعمدة المخصصة
-        const columnNames = { 
-            image1:"صوره العقد",
-            rep1:"بيان الاعطال",
-            rep2:"تقارير الصيانه",
-            image2:"صوره الشاسيه",
-            rep3:"مستند الصرف",
-            image3:"صور بطاقه السائق",
-            _id: 'رقم التعريف'
-        };
-
-        res.render('bldozer', { pageTitle: 'صفحه تفاصيل آله جرف', bldozer, columnNames });
-    } catch (err) {
-        next(err);
-    }
-};
 ///////////////////////////////////////////
 exports.getBobcat = async (req, res, next) => {
     try {
@@ -95,29 +86,7 @@ exports.getGararmaknsa = async (req, res, next) => {
         next(err);
     }
 };
-///////////////////////////////////////////
-exports.getGredar = async (req, res, next) => {
-    try {
-        const db = getDb();
-        const gredar= await db.collection('gredar').find().toArray();
 
-        // أسماء الأعمدة المخصصة
-        const columnNames = { 
-            image1:"صوره العقد",
-            rep1:"بيان الاعطال",
-            rep2:"تقارير الصيانه",
-            image2:"صوره الشاسيه",
-            rep3:"مستند الصرف",
-            image3:"صور بطاقه السائق",
-            image4:"مؤجر",
-            _id: 'رقم التعريف'
-        };
-
-        res.render('gredar', { pageTitle: 'صفحه تفاصيل آله تسوية', gredar, columnNames });
-    } catch (err) {
-        next(err);
-    }
-};
 
 ///////////////////////////////////////////
 exports.getHafar = async (req, res, next) => {

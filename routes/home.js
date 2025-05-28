@@ -3,11 +3,11 @@ const router = express.Router();
 const homeController = require('../controllers/homeController');
 
 router.get('/home', homeController.getHome);
-router.get('/home/lodar', homeController.getLodar);
 router.get('/home/bldozer', homeController.getBldozer);
+router.get('/home/gredar', homeController.getGredar);
+router.get('/home/lodar', homeController.getLodar);
 router.get('/home/bobcat', homeController.getBobcat);
 router.get('/home/gararmaknsa', homeController.getGararmaknsa);
-router.get('/home/gredar', homeController.getGredar);
 router.get('/home/hafar', homeController.getHafar);
 router.get('/home/daghet', homeController.getDaghet);
 router.get('/home/fenshr', homeController.getFenshr);

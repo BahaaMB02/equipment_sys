@@ -68,6 +68,7 @@ const storesRoutes = require('./routes/stores');
 const homeRoutes = require('./routes/home');
 const tamamRoutes = require('./routes/tamam');
 const driversRoutes = require('./routes/drivers');
+const equipmentRoutes = require('./routes/equipment');
 
 
 app.use(loginData);
@@ -82,6 +83,7 @@ app.use(ensureAuthenticated);
 app.use(repairData);
 app.use(storesRoutes);
 app.use(homeRoutes);
+app.use(equipmentRoutes);
 app.use(tamamRoutes);
 app.use(driversRoutes);
 // Error handler (add this at the end)
