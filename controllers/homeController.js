@@ -14,8 +14,35 @@ exports.getBldozer = (req, res) => {
 };
 ///////////////////////////////////////////
 exports.getGredar = (req, res) => {
-    res.render('bldozer', {
-        pageTitle: 'آله جرف',
+    res.render('gredar', {
+        pageTitle: 'آله تسوية',
+    });
+};
+
+///////////////////////////////////////////
+exports.getAlab = async (req, res, next) => {
+        res.render('alab', {
+        pageTitle: 'قلاب',
+    });
+};
+///////////////////////////////////////////
+exports.getFenshr = async (req, res, next) => {
+        res.render('fenshr', {
+        pageTitle: 'آله فرش أسفلت',
+    });
+};
+
+///////////////////////////////////////////
+exports.getAsphlt = async (req, res, next) => {
+        res.render('asphlt', {
+        pageTitle: 'هراس أسفلت',
+    });
+
+};
+///////////////////////////////////////////
+exports.getTorab = async (req, res, next) => {
+         res.render('torab', {
+        pageTitle: 'هراس تراب',
     });
 };
 ///////////////////////////////////////////
@@ -156,28 +183,6 @@ exports.getDaghet = async (req, res, next) => {
     }
 };
 ///////////////////////////////////////////
-exports.getFenshr = async (req, res, next) => {
-    try {
-        const db = getDb();
-        const fenshr= await db.collection('fenshr').find().toArray();
-
-        // أسماء الأعمدة المخصصة
-        const columnNames = { 
-            image1:"صوره العقد",
-            rep1:"بيان الاعطال",
-            rep2:"تقارير الصيانه",
-            image2:"صوره الشاسيه",
-            rep3:"مستند الصرف",
-            image3:"صور بطاقه السائق",
-            _id: 'رقم التعريف'
-        };
-
-        res.render('fenshr', { pageTitle: 'صفحه تفاصيل آله فرش أسفلت', fenshr, columnNames });
-    } catch (err) {
-        next(err);
-    }
-};
-///////////////////////////////////////////
 exports.getFontas = async (req, res, next) => {
     try {
         const db = getDb();
@@ -199,31 +204,7 @@ exports.getFontas = async (req, res, next) => {
         next(err);
     }
 };
-///////////////////////////////////////////
-exports.getAlab = async (req, res, next) => {
-    try {
-        const db = getDb();
-        const alab= await db.collection('alab').find().toArray();
 
-        // أسماء الأعمدة المخصصة
-        const columnNames = { 
-            image1:"صوره العقد",
-            rep1:"بيان الاعطال",
-            rep2:"تقارير الصيانه",
-            image2:"صوره الشاسيه",
-            rep3:"مستند الصرف",
-            image3:"صور بطاقه السائق",
-            rep4:" افيكو",
-            rep5:" مرسيدس",
-            rep6:" MP4",
-            _id: 'رقم التعريف'
-        };
-
-        res.render('alab', { pageTitle: 'صفحه تفاصيل آله قلاب', alab , columnNames });
-    } catch (err) {
-        next(err);
-    }
-};
 ///////////////////////////////////////////
 exports.getKasor = async (req, res, next) => {
     try {
@@ -358,50 +339,8 @@ exports.getMoaled = async (req, res, next) => {
         next(err);
     }
 };
-///////////////////////////////////////////
-exports.getAsphlt = async (req, res, next) => {
-    try {
-        const db = getDb();
-        const asphlt= await db.collection('asphlt').find().toArray();
 
-        // أسماء الأعمدة المخصصة
-        const columnNames = { 
-            image1:"صوره العقد",
-            rep1:"بيان الاعطال",
-            rep2:"تقارير الصيانه",
-            image2:"صوره الشاسيه",
-            rep3:"مستند الصرف",
-            image3:"صور بطاقه السائق",
-            _id: 'رقم التعريف'
-        };
 
-        res.render('asphlt', { pageTitle: 'صفحه تفاصيل هراس أسفلت', asphlt , columnNames });
-    } catch (err) {
-        next(err);
-    }
-};
-///////////////////////////////////////////
-exports.getTorab = async (req, res, next) => {
-    try {
-        const db = getDb();
-        const torab= await db.collection('torab').find().toArray();
-
-        // أسماء الأعمدة المخصصة
-        const columnNames = { 
-            image1:"صوره العقد",
-            rep1:"بيان الاعطال",
-            rep2:"تقارير الصيانه",
-            image2:"صوره الشاسيه",
-            rep3:"مستند الصرف",
-            image3:"صور بطاقه السائق",
-            _id: 'رقم التعريف'
-        };
-
-        res.render('torab', { pageTitle: 'صفحه تفاصيل هراس تراب', torab , columnNames });
-    } catch (err) {
-        next(err);
-    }
-};
 ///////////////////////////////////////////
 exports.getWensh = async (req, res, next) => {
     try {

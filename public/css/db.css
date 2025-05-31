@@ -101,12 +101,11 @@ body {
   cursor: pointer;
   color: #2B2B2B; /* Charcoal Black */
 }
-
 .main-action-btn {
   background-color: #2B2B2B; /* Charcoal Black */
   color: #FFD500; /* Safety Yellow */
   padding: 14px 32px;
-  border: none;
+  border: none; /* Charcoal Black border */
   margin: 50px;
   border-radius: 8px;
   font-size: 22px;
@@ -118,12 +117,13 @@ body {
   background-color: #FFD500;
   color: #2B2B2B;
 }
+
 .main-action-btn2 {
   background-color: #2B2B2B; /* Charcoal Black */
   color: #FFD500; /* Safety Yellow */
   padding: 14px 32px;
-  border: none;
-  margin: 35px ;
+  border: none; /* Charcoal Black border */
+  margin: 50px;
   border-radius: 8px;
   font-size: 22px;
   transition: background 0.2s, color 0.2s;

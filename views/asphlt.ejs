@@ -5,49 +5,13 @@
 
   <div class="home-container">
     <h1>هراس أسفلت</h1>
-  </div>
-
-  <div class="accordion-container">
-    <% if (!asphlt || !asphlt.length) { %>
-      <div class="no-data">لا توجد بيانات للعرض.</div>
-    <% } else { %>
-      <% asphlt.forEach(function(report, index) { %>
-        <div class="accordion-item">
-          <button class="accordion-button" onclick="toggleAccordion('<%= index %>')">
-            <%= report.name || 'بدون اسم' %>
-          </button>
-          <div class="accordion-content" id="accordion-<%= index %>">
-            <% Object.entries(report).forEach(function([key, value]) { %>
-              <% if (key !== '_id' && key !== 'name') { %>
-                <div class="report-item">
-                <% if (typeof value === 'string' && value.startsWith('http')) { %>
-                    <a href="<%= value %>" target="_blank" class="link-style">
-                        <strong><%= columnNames[key] || key %></strong>
-                    </a>
-                <% } else { %>
-                    <strong><%= columnNames[key] || key %>: </strong>
-                    <%= value %>
-              <% } %>
-
-                </div>
-              <% } %>
-            <% }); %>
-            <form action="/stores/delete" method="POST">
-              <input type="hidden" name="id" value="<%= report._id %>">
-              <button type="submit" class="btn btn-danger">🗑 حذف</button>
-            </form>
-          </div>
-        </div>
-      <% }); %>
-    <% } %>
-  </div>
-
-<script>
-  function toggleAccordion(id) {
-    const content = document.getElementById('accordion-' + id);
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-  }
-</script>
+      </div>
+      <div class="home-buttons">
+       <button class="main-action-btn" onclick="window.location.href='/home/asphlt/asphltd'">دينباك</button>
+        <button class="main-action-btn" onclick="window.location.href='/home/asphlt/asphlth'">هام</button>
+         <button class="main-action-btn" onclick="window.location.href='/home/asphlt/asphltv'">فولفو</button> 
+   
+    </div>
 
 <%- include('partials/end') %>
 
